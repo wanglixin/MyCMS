@@ -1,0 +1,5 @@
+D:\code\dotnet\mycms\MyCMS.Domain.Abstractions\bin\Debug\netstandard2.0\MyCMS.Domain.Abstractions.deps.json
+D:\code\dotnet\mycms\MyCMS.Domain.Abstractions\bin\Debug\netstandard2.0\MyCMS.Domain.Abstractions.dll
+D:\code\dotnet\mycms\MyCMS.Domain.Abstractions\obj\Debug\netstandard2.0\MyCMS.Domain.Abstractions.csprojAssemblyReference.cache
+D:\code\dotnet\mycms\MyCMS.Domain.Abstractions\obj\Debug\netstandard2.0\MyCMS.Domain.Abstractions.AssemblyInfoInputs.cache
+D:\code\dotnet\mycms\MyCMS.Domain.Abstractions\obj\Debug\netstandard2.0\MyCMS.Domain.Abstractions.AssemblyInfo.cs
