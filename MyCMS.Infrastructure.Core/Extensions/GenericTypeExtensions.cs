@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeekTime.Infrastructure.Core.Extensions
+namespace MyCMS.Infrastructure.Core.Extensions
 {
     public static class GenericTypeExtensions
     {

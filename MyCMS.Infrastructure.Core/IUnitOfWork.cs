@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GeekTime.Infrastructure.Core
+namespace MyCMS.Infrastructure.Core
 {
     public interface IUnitOfWork : IDisposable
     {

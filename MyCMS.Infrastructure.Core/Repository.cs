@@ -1,11 +1,12 @@
-﻿using GeekTime.Domain;
+﻿using MyCMS.Domain;
+using MyCMS.Domain.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GeekTime.Infrastructure.Core
+namespace MyCMS.Infrastructure.Core
 {
     public abstract class Repository<TEntity, TDbContext> : IRepository<TEntity> where TEntity : Entity, IAggregateRoot where TDbContext : EFContext
     {

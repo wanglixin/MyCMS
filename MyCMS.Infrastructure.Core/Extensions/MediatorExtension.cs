@@ -1,4 +1,4 @@
-﻿using GeekTime.Domain;
+﻿using MyCMS.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyCMS.Domain.Abstractions;
 
-namespace GeekTime.Infrastructure.Core.Extensions
+namespace MyCMS.Infrastructure.Core.Extensions
 {
     static class MediatorExtension
     {

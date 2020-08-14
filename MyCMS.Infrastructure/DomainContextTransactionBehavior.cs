@@ -1,11 +1,11 @@
 ﻿using DotNetCore.CAP;
-using GeekTime.Infrastructure.Core.Behaviors;
+using MyCMS.Infrastructure.Core.Behaviors;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GeekTime.Infrastructure
+namespace MyCMS.Infrastructure
 {
     public class DomainContextTransactionBehavior<TRequest, TResponse> : TransactionBehavior<DomainContext, TRequest, TResponse>
     {

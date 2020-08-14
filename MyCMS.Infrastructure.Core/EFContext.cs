@@ -1,11 +1,10 @@
 ﻿using DotNetCore.CAP;
-using GeekTime.Infrastructure.Core.Extensions;
+using MyCMS.Infrastructure.Core.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;

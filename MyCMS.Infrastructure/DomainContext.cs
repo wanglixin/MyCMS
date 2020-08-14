@@ -1,6 +1,4 @@
 ﻿using DotNetCore.CAP;
-using MyCMS.Domain.OrderAggregate;
-using MyCMS.Domain.UserAggregate;
 using MyCMS.Infrastructure.Core;
 using MyCMS.Infrastructure.EntityConfigurations;
 using MediatR;
@@ -16,13 +14,12 @@ namespace MyCMS.Infrastructure
         {
         }
 
-        public DbSet<SiteInfo> Orders { get; set; }
+        public DbSet<SiteInfo> SiteInfos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region 注册领域模型与数据库的映射关系
-            modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SiteInfoEntityTypeConfiguration());
             #endregion
             base.OnModelCreating(modelBuilder);
         }

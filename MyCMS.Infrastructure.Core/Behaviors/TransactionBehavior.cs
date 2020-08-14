@@ -1,5 +1,5 @@
 ﻿using DotNetCore.CAP;
-using GeekTime.Infrastructure.Core.Extensions;
+using MyCMS.Infrastructure.Core.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GeekTime.Infrastructure.Core.Behaviors
+namespace MyCMS.Infrastructure.Core.Behaviors
 {
     public class TransactionBehavior<TDbContext, TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TDbContext : EFContext
     {
