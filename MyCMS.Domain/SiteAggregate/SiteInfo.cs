@@ -14,11 +14,23 @@ namespace MyCMS.Domain.SiteAggregate
         /// </summary>
         public string Name { get; private set; }
 
+        /// <summary>
+        /// 域名
+        /// </summary>
+        public string Domain { get; private set; }
+
+        /// <summary>
+        /// 描述 介绍
+        /// </summary>
+        public string Desc { get; set; }
+
+
         protected SiteInfo() { }
 
-        public SiteInfo(string Name)
+        public SiteInfo(string name,string domain)
         {
-            this.Name = Name;
+            this.Name = name;
+            this.Domain = domain;
             this.AddDomainEvent(new SiteCreatedDomainEvent(this));
         }
 

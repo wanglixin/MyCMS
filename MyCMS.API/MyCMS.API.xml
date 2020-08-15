@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyCMS.API</name>
+    </assembly>
+    <members>
+        <member name="M:MyCMS.API.Controllers.SiteController.CreateSite(MyCMS.API.Application.Commands.CreateSiteCommand)">
+            <summary>
+            创建网站
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

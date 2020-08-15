@@ -12,8 +12,8 @@ namespace MyCMS.Infrastructure.EntityConfigurations
             builder.HasKey(p => p.Id);
             builder.ToTable("SiteInfo");
             builder.Property(p => p.Name).HasMaxLength(100);
-            //builder.Property(p => p.UserName).HasMaxLength(30);
-            //builder.Property(p => p.OrderNo).HasMaxLength(30);
+            builder.Property(p => p.Domain).HasMaxLength(200);
+            builder.Property(p => p.Desc).HasMaxLength(1000);
             //builder.OwnsOne(o => o.Address, a =>
             //{
             //    a.WithOwner();

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyCMS.API.Application.Commands;
 
 namespace MyCMS.API.Controllers
 {
@@ -19,8 +20,13 @@ namespace MyCMS.API.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// 创建网站
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<long> CreateOrder([FromBody]CreateOrderCommand cmd)
+        public async Task<long> CreateSite([FromBody]CreateSiteCommand cmd)
         {
             return await _mediator.Send(cmd, HttpContext.RequestAborted);
         }

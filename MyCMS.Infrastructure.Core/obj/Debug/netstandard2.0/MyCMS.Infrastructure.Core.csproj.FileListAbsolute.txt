@@ -4,3 +4,8 @@ D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.In
 D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.Infrastructure.Core.AssemblyInfo.cs
 D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.Infrastructure.Core.csprojAssemblyReference.cache
 D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\bin\Debug\netstandard2.0\MyCMS.Domain.Abstractions.dll
+D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\bin\Debug\netstandard2.0\MyCMS.Infrastructure.Core.pdb
+D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\bin\Debug\netstandard2.0\MyCMS.Domain.Abstractions.pdb
+D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.Infrastructure.Core.csproj.CopyComplete
+D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.Infrastructure.Core.dll
+D:\code\dotnet\mycms\MyCMS.Infrastructure.Core\obj\Debug\netstandard2.0\MyCMS.Infrastructure.Core.pdb
