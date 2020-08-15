@@ -8,17 +8,16 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExceptionDemo.Exceptions
+namespace MyCMS.API.Exceptions
 {
     public class MyExceptionFilter : IExceptionFilter
     {
         public void OnException(ExceptionContext context)
         {
-
             IKnownException knownException = context.Exception as IKnownException;
             if (knownException == null)
             {
-                var logger = context.HttpContext.RequestServices.GetService<ILogger<MyExceptionFilterAttribute>>();
+                var logger = context.HttpContext.RequestServices.GetService<ILogger<MyExceptionFilter>>();
                 logger.LogError(context.Exception, context.Exception.Message);
                 knownException = KnownException.Unknown;
                 context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;

@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExceptionDemo.Exceptions
+namespace MyCMS.API.Exceptions
 {
     public class MyExceptionFilterAttribute : ExceptionFilterAttribute
     {
