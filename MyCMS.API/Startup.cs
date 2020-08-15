@@ -41,6 +41,7 @@ namespace MyCMS.API
 
             services.AddMediatRServices();
             services.AddMySqlDomainContext(Configuration.GetValue<string>("Mysql"));
+            services.AddRepositories();
             services.AddEventBus(Configuration);
         }
 

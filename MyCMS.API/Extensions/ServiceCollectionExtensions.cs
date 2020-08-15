@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using MyCMS.Domain.SiteAggregate;
+using MyCMS.Infrastructure.Repositories;
 
 namespace MyCMS.API.Extensions
 {
@@ -41,17 +42,17 @@ namespace MyCMS.API.Extensions
         }
 
 
-        //public static IServiceCollection AddRepositories(this IServiceCollection services)
-        //{
-        //    services.AddScoped<IOrderRepository, OrderRepository>();
-        //    return services;
-        //}
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<ISiteRepository, SiteRepository>();
+            return services;
+        }
 
 
 
         public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
         {
-           // services.AddTransient<ISubscriberService, SubscriberService>();
+            // services.AddTransient<ISubscriberService, SubscriberService>();
             services.AddCap(options =>
             {
                 options.UseEntityFramework<DomainContext>();

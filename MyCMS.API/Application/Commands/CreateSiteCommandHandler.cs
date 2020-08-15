@@ -1,5 +1,7 @@
 ﻿using DotNetCore.CAP;
 using MediatR;
+using MyCMS.Domain.SiteAggregate;
+using MyCMS.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +12,13 @@ namespace MyCMS.API.Application.Commands
 {
     public class CreateSiteCommandHandler : IRequestHandler<CreateSiteCommand, int>
     {
-       // IOrderRepository _orderRepository;
-       // ICapPublisher _capPublisher;
-        public CreateSiteCommandHandler( //IOrderRepository orderRepository, 
-            //ICapPublisher capPublisher
+        ISiteRepository _siteRepository;
+        ICapPublisher _capPublisher;
+        public CreateSiteCommandHandler(ISiteRepository siteRepository, ICapPublisher capPublisher
             )
         {
-           // _orderRepository = orderRepository;
-           // _capPublisher = capPublisher;
+            _siteRepository = siteRepository;
+            _capPublisher = capPublisher;
         }
 
 
@@ -25,11 +26,11 @@ namespace MyCMS.API.Application.Commands
         {
 
             // var address = new Address("wen san lu", "hangzhou", "310000");
-            //  var order = new Order("xiaohong1999", "xiaohong", 25, address);
+            var site = new SiteInfo("测试", "http://www.baidu.com");
 
-            // _orderRepository.Add(order);
-            //  await _orderRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
-            return 110;
+            _siteRepository.Add(site);
+            await _siteRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+            return site.Id;
         }
     }
 }
