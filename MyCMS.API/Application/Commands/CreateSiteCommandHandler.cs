@@ -1,6 +1,7 @@
 ﻿using DotNetCore.CAP;
 using MediatR;
 using MyCMS.Domain.SiteAggregate;
+using MyCMS.Infrastructure.Core;
 using MyCMS.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MyCMS.API.Application.Commands
 {
-    public class CreateSiteCommandHandler : IRequestHandler<CreateSiteCommand, int>
+    public class CreateSiteCommandHandler : IRequestHandler<CreateSiteCommand, Result>
     {
         ISiteRepository _siteRepository;
         ICapPublisher _capPublisher;
@@ -22,15 +23,12 @@ namespace MyCMS.API.Application.Commands
         }
 
 
-        public async Task<int> Handle(CreateSiteCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(CreateSiteCommand request, CancellationToken cancellationToken)
         {
-
-            // var address = new Address("wen san lu", "hangzhou", "310000");
-            var site = new SiteInfo("测试", "http://www.baidu.com");
-
+            var site = new SiteInfo(request.Name,request.Domain);
             _siteRepository.Add(site);
             await _siteRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
-            return site.Id;
+            return Result<int>.Success(site.Id);
         }
     }
 }

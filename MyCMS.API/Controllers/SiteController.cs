@@ -26,7 +26,7 @@ namespace MyCMS.API.Controllers
         /// <param name="cmd"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<long> CreateSite([FromBody]CreateSiteCommand cmd)
+        public async Task<dynamic> CreateSite([FromBody]CreateSiteCommand cmd)
         {
             return await _mediator.Send(cmd, HttpContext.RequestAborted);
         }
