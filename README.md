@@ -5,6 +5,10 @@
 
 #### 软件架构
 
+语言：c#（.net core）
+
+结构：
+
 应用层（Applications）
 领域层（Domain）
 基础设施层（Infrastructure）
