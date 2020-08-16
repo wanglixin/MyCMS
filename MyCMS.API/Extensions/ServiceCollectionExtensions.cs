@@ -45,6 +45,7 @@ namespace MyCMS.API.Extensions
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<ISiteRepository, SiteRepository>();
+            services.AddScoped<ITestRepository, TestRepository>();
             return services;
         }
 

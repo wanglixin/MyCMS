@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200816160246_add test table.cs" />
+    <Compile Remove="Migrations\20200816160246_add test table.Designer.cs" />
+    <Compile Remove="Migrations\20200816160852_add_test_table.cs" />
+    <Compile Remove="Migrations\20200816160852_add_test_table.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
       <PrivateAssets>all</PrivateAssets>

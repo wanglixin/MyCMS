@@ -20,6 +20,7 @@ namespace MyCMS.Infrastructure
         {
             #region 注册领域模型与数据库的映射关系
             modelBuilder.ApplyConfiguration(new SiteInfoEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TestEntityTypeConfiguration());
             #endregion
             base.OnModelCreating(modelBuilder);
         }
