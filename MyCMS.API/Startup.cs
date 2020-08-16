@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyCMS.API.Exceptions;
 using MyCMS.API.Extensions;
 using MyCMS.Infrastructure;
 
@@ -31,6 +32,13 @@ namespace MyCMS.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddNewtonsoftJson();
+            services.AddMvc(mvcOptions =>
+            {
+                mvcOptions.Filters.Add<CustomerExceptionFilter>();
+            }).AddJsonOptions(jsonoptions =>
+            {
+                jsonoptions.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
