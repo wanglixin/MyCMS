@@ -11,5 +11,17 @@
             <param name="cmd"></param>
             <returns></returns>
         </member>
+        <member name="M:MyCMS.API.Filters.ActionFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            action执行后
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:MyCMS.API.Filters.ActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+             action执行前
+            </summary>
+            <param name="context"></param>
+        </member>
     </members>
 </doc>

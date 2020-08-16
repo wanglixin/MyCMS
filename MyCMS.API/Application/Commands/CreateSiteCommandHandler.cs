@@ -14,7 +14,7 @@ namespace MyCMS.API.Application.Commands
     public class CreateSiteCommandHandler : IRequestHandler<CreateSiteCommand, Result>
     {
         readonly ISiteRepository _siteRepository;
-        ICapPublisher _capPublisher;
+        readonly ICapPublisher _capPublisher;
         public CreateSiteCommandHandler(ISiteRepository siteRepository, ICapPublisher capPublisher
             )
         {

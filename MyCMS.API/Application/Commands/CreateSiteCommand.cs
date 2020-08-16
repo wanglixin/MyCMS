@@ -2,6 +2,7 @@
 using MyCMS.Infrastructure.Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,8 +16,10 @@ namespace MyCMS.API.Application.Commands
             Domain = domain;
         }
 
-
+        [Required(ErrorMessage ="名称不能为空")]
         public string Name { get; private set; }
+
+        [Required(ErrorMessage = "域名不能为空")]
         public string Domain { get; private set; }
     }
 }

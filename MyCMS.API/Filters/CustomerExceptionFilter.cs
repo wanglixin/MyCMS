@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyCMS.Infrastructure.Core;
 
-namespace MyCMS.API.Exceptions
+namespace MyCMS.API.Filters
 {
     public class CustomerExceptionFilter : IExceptionFilter
     {

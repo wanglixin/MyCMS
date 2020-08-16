@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyCMS.API.Exceptions
+namespace MyCMS.API.Filters
 {
     public interface IKnownException
     {

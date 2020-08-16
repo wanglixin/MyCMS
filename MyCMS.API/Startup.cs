@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using MyCMS.API.Exceptions;
+using MyCMS.API.Filters;
 using MyCMS.API.Extensions;
 using MyCMS.Infrastructure;
 
@@ -35,6 +35,7 @@ namespace MyCMS.API
             services.AddMvc(mvcOptions =>
             {
                 mvcOptions.Filters.Add<CustomerExceptionFilter>();
+                mvcOptions.Filters.Add<ActionFilter>();
             }).AddJsonOptions(jsonoptions =>
             {
                 jsonoptions.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
@@ -45,6 +46,12 @@ namespace MyCMS.API
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
+            });
+
+            //关闭参数自动校验,我们需要返回自定义的格式
+            services.Configure<ApiBehaviorOptions>((o) =>
+            {
+                o.SuppressModelStateInvalidFilter = true;
             });
 
             services.AddMediatRServices();
