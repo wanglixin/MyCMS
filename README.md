@@ -8,6 +8,8 @@
 
 语言：c#（.net core）
 
+数据库：mysql
+
 结构：
 
 应用层（Applications）
