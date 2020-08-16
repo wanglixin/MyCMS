@@ -17,6 +17,13 @@ namespace MyCMS.Infrastructure.Core
         Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
         bool Remove(Entity entity);
         Task<bool> RemoveAsync(Entity entity);
+
+        Task<bool> AnyAsync(Func<TEntity, bool> predicate);
+        bool Any(Func<TEntity, bool> predicate);
+
+        Task<bool> AnyAsync();
+        bool Any();
+
     }
 
 

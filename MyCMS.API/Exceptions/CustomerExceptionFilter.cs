@@ -20,7 +20,8 @@ namespace MyCMS.API.Exceptions
             {
                 var logger = context.HttpContext.RequestServices.GetService<ILogger<CustomerExceptionFilter>>();
                 logger.LogError(context.Exception, context.Exception.Message);
-                knownException = KnownException.Unknown;
+                // knownException = KnownException.Unknown;
+                knownException = KnownException.FromKnownException(context.Exception);
                 context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             }
             else

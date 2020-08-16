@@ -13,7 +13,7 @@ namespace MyCMS.API.Application.Commands
 {
     public class CreateSiteCommandHandler : IRequestHandler<CreateSiteCommand, Result>
     {
-        ISiteRepository _siteRepository;
+        readonly ISiteRepository _siteRepository;
         ICapPublisher _capPublisher;
         public CreateSiteCommandHandler(ISiteRepository siteRepository, ICapPublisher capPublisher
             )
@@ -25,10 +25,14 @@ namespace MyCMS.API.Application.Commands
 
         public async Task<Result> Handle(CreateSiteCommand request, CancellationToken cancellationToken)
         {
-            var site = new SiteInfo(request.Name,request.Domain);
-            _siteRepository.Add(site);
+            if (await _siteRepository.AnyAsync())
+            {
+                return Result<int>.Failure(0, "请不要重复创建");
+            }
+            var site = new SiteInfo(request.Name, request.Domain);
+            await _siteRepository.AddAsync(site);
             await _siteRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
-            return Result<int>.Success(site.Id);
+            return Result<int>.Success(site.Id, "创建成功");
         }
     }
 }

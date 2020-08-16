@@ -1,7 +1,9 @@
-﻿using MyCMS.Domain;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using MyCMS.Domain;
 using MyCMS.Domain.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -47,6 +49,26 @@ namespace MyCMS.Infrastructure.Core
         public virtual Task<bool> RemoveAsync(Entity entity)
         {
             return Task.FromResult(Remove(entity));
+        }
+
+        public virtual Task<bool> AnyAsync(Func<TEntity, bool> predicate)
+        {
+            return Task.FromResult(DbContext.Set<TEntity>().Any(predicate));
+        }
+
+        public virtual bool Any(Func<TEntity, bool> predicate)
+        {
+            return DbContext.Set<TEntity>().Any(predicate);
+        }
+
+        public virtual Task<bool> AnyAsync()
+        {
+            return Task.FromResult(DbContext.Set<TEntity>().Any());
+        }
+
+        public virtual bool Any()
+        {
+            return DbContext.Set<TEntity>().Any();
         }
     }
 
