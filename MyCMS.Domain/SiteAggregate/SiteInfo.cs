@@ -31,7 +31,7 @@ namespace MyCMS.Domain.SiteAggregate
         {
             this.Name = name;
             this.Domain = domain;
-            this.AddDomainEvent(new SiteCreatedDomainEvent(this));
+            this.AddDomainEvent(new SiteCreatedDomainEvent(this)); //添加 领域模型新增 事件
         }
 
         public void ChangeName(string Name)

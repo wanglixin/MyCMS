@@ -4,6 +4,11 @@
         <name>MyCMS.API</name>
     </assembly>
     <members>
+        <member name="T:MyCMS.API.Application.IntegrationEvents.SiteCreatedIntegrationEvent">
+            <summary>
+            站点创建事件（集成），通过该对象去传递
+            </summary>
+        </member>
         <member name="M:MyCMS.API.Controllers.SiteController.CreateSite(MyCMS.API.Application.Commands.CreateSiteCommand)">
             <summary>
             创建网站

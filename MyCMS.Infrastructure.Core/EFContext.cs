@@ -27,7 +27,7 @@ namespace MyCMS.Infrastructure.Core
         {
             var result = await base.SaveChangesAsync(cancellationToken);
             await _mediator.DispatchDomainEventsAsync(this);
-            return true;
+            return result > 0;
         }
         #endregion
 

@@ -14,10 +14,11 @@ namespace MyCMS.API.Controllers
     public class SiteController : ControllerBase
     {
         IMediator _mediator;
-
-        public SiteController(IMediator mediator)
+        readonly ILogger<SiteController> _logger;
+        public SiteController(IMediator mediator, ILogger<SiteController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace MyCMS.API.Controllers
         [HttpPost]
         public async Task<dynamic> CreateSite([FromBody]CreateSiteCommand cmd)
         {
+            _logger.LogInformation($"接收到接口请求/api/Site/CreateSite,参数 Name={cmd.Name} Domain={cmd.Domain}");
             return await _mediator.Send(cmd, HttpContext.RequestAborted);
         }
 

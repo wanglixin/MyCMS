@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using MyCMS.Domain.SiteAggregate;
 using MyCMS.Infrastructure.Repositories;
+using MyCMS.API.Application.IntegrationEvents;
+using Microsoft.Extensions.Logging;
+using DotNetCore.CAP.Messages;
 
 namespace MyCMS.API.Extensions
 {
@@ -53,7 +56,7 @@ namespace MyCMS.API.Extensions
 
         public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
         {
-            // services.AddTransient<ISubscriberService, SubscriberService>();
+            services.AddTransient<ISubscriberService, SubscriberService>();
             services.AddCap(options =>
             {
                 options.UseEntityFramework<DomainContext>();
@@ -62,7 +65,14 @@ namespace MyCMS.API.Extensions
                 {
                     configuration.GetSection("RabbitMQ").Bind(options);
                 });
-                //options.UseDashboard();
+                options.FailedRetryCount = 20; //重试20次结束
+                options.FailedThresholdCallback = failed =>
+                {
+                    var logger = failed.ServiceProvider.GetService<ILogger>();
+                    logger.LogInformation($@"A message of type {failed.MessageType} failed after executing {options.FailedRetryCount} several times, 
+                        requiring manual troubleshooting. Message name: {failed.Message.GetName()}");
+                };
+                options.UseDashboard();
             });
 
             return services;

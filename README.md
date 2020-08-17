@@ -17,14 +17,16 @@
 基础设施层（Infrastructure）
 共享层（Shared）
 
-
-#### 使用说明
-
 #### todo
 
 1.测试事务处理
 
-2.部署到centos
+2.测试事件集成 （CAP）
 
-3.使用webhook自动部署代码
+3.部署到centos
+
+4.使用webhook自动部署代码
+
+#### 使用说明
+
 
