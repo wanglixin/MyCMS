@@ -64,6 +64,7 @@ namespace MyCMS.API.Extensions
                 options.UseRabbitMQ(options =>
                 {
                     configuration.GetSection("RabbitMQ").Bind(options);
+                    //options.Port
                 });
                 options.FailedRetryCount = 20; //重试20次结束
                 options.FailedThresholdCallback = failed =>

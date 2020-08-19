@@ -28,7 +28,7 @@ namespace MyCMS.API.Application.IntegrationEvents
             //Do SomeThing
             _logger.LogInformation($"1.关注接收到 SiteCreated 集成事件，参数Id={@event.Id}");
 
-            _testRepository.Add(new Domain.Test() { Name = "Test2" });  //测试失败
+            _testRepository.Add(new Domain.Test("Test2"));  //测试失败
             var i = _testRepository.UnitOfWork.SaveChangesAsync().Result;
 
         }

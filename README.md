@@ -10,6 +10,7 @@
 
 数据库：mysql
 
+
 结构：
 
 应用层（Applications）
@@ -19,14 +20,20 @@
 
 #### todo
 
-1.测试事务处理
+1.测试事务处理 √
 
-2.测试事件集成 （CAP）
+2.测试事件集成 （CAP） √
 
-3.部署到centos
+3.部署到centos,安装dokcer k8s
 
 4.使用webhook自动部署代码
 
 #### 使用说明
+
+http://120.25.26.57:8011/swagger/index.html
+http://120.25.26.57:8012/swagger/index.html
+http://120.25.26.57:8013/swagger/index.html
+
+.net core+docker+centos+rabbitmq+cap+mysql
 
 

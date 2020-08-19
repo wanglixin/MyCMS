@@ -9,9 +9,7 @@ namespace MyCMS.Domain
     {
         public string Name { get; set; }
 
-        public Test()
-        {
-        }
+     
 
         public Test(string name)
         {

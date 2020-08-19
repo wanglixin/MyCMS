@@ -6,5 +6,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>MyCMS.API</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>FolderProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
