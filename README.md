@@ -24,9 +24,9 @@
 
 2.测试事件集成 （CAP） √
 
-3.部署到centos,安装dokcer k8s
+3.部署到centos,安装dokcer k8s √
 
-4.使用webhook自动部署代码
+4.使用webhook自动部署代码 
 
 #### 使用说明
 
